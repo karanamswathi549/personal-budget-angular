@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule}from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +8,13 @@ import { HeroComponent } from './hero/hero.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ArticleComponent } from './article/article.component';
+import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { P404Component } from './p404/p404.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +23,19 @@ import { ArticleComponent } from './article/article.component';
     HeroComponent,
     FooterComponent,
     HomepageComponent,
-    ArticleComponent,],
+    ArticleComponent,
+    AboutComponent,
+    LoginComponent,
+    P404Component,
+    BreadcrumbsComponent,
+    ContactComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
